@@ -1,0 +1,203 @@
+# translation of django.po to greek
+# Copyright (C) 2008 THE bblog'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the bblog package.
+#
+#
+# Christos Trochalakis <yatiohi@ideopolis.gr>, 2008.
+#  <>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-03-31 18:44+0300\n"
+"PO-Revision-Date: 2008-03-31 11:59+0300\n"
+"Last-Translator: Christos Trochalakis <yatiohi@ideopolis.gr>\n"
+"Language-Team: greek <django-gr@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: sample_settings.py:105 settings.py:106
+msgid "Greek"
+msgstr "Ελληνικά"
+
+#: sample_settings.py:106 settings.py:107
+msgid "English"
+msgstr "Αγγλικά"
+
+#: templates/base.html:13
+msgid "Ma gavte la nata: Latest Posts RSS 2.0 Feed"
+msgstr "Ma gavte la nata: Πηγή RSS Τελευταίων δημοσιεύσεων"
+
+#: templates/base.html:55
+msgid "Categories"
+msgstr "Κατηγορίες"
+
+#: templates/base.html:63
+msgid "Tags"
+msgstr "ετικέτες"
+
+#: templates/base.html:69
+msgid "del.icio.us"
+msgstr "del.icio.us"
+
+#: templates/base.html:80
+msgid ""
+"\n"
+"Made with <a href=\"http://djangoproject.org/\">Django</a>. Christos "
+"Trochalakis, Some Rights Reserved.\n"
+"<a href=\"http://validator.w3.org/check/referer\">XHTML 1.1</a> |\n"
+"<a href=\"http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;"
+"profile=css2\">CSS</a>\n"
+msgstr ""
+"\n"
+"Γραμμένο σε <a href=\"http://djangoproject.org/\">Django</a>. Χρήστος "
+"Τροχαλάκης, Some Rights Reserved.\n"
+"<a href=\"http://validator.w3.org/check/referer\">XHTML 1.1</a> |\n"
+"<a href=\"http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;"
+"profile=css2\">CSS</a>\n"
+
+#: templates/blog/category_detail.html:6
+#: templates/blog/category_detail.html:11
+#, python-format
+msgid "Posts for %(cat_title)s"
+msgstr "%(cat_title)s"
+
+#: templates/blog/category_list.html:5 templates/blog/category_list.html:9
+msgid "Post categories"
+msgstr "Κατηγορίες"
+
+#: templates/blog/post_list.html:5
+msgid "Latest Posts"
+msgstr "Τελευταίες δημοσιεύσεις"
+
+#: templates/blog/tag_detail.html:5 templates/blog/tag_detail.html.py:10
+#, python-format
+msgid "Posts for %(tag_title)s"
+msgstr "Ετικέτα: %(tag_title)s"
+
+#: templates/blog/partial/post_comment_form.html:5
+msgid "Make a comment!"
+msgstr "Εσείς πάλι, τι λέτε για όλα αυτά;"
+
+#: templates/blog/partial/post_comment_form.html:7
+msgid "About Comments"
+msgstr "Περί σχολίων"
+
+#: templates/blog/partial/post_comment_form.html:9
+msgid ""
+"\n"
+"Your email won't be published for any reason. It's only kept for archive "
+"reasons if i want to contact you.\n"
+"You can use markdown syntax.\n"
+msgstr ""
+"\n"
+"Να ξέρετε, η διεύθυνσή σας δεν θα δημοσιοποιηθεί. Το πεδίο υπάρχει απλά για "
+"λόγους επικοινωνίας κ' αρχείου. Μπορείτε να χρησιμοποιήσετε σύνταξη "
+"Markdown.\n"
+
+#: templates/blog/partial/post_comment_form.html:18
+#: templates/threadedcomments/preview_comment.html:21
+msgid "Submit Comment"
+msgstr "Υποβολή"
+
+#: templates/blog/partial/post_comment_form.html:21
+msgid "Comments are closed."
+msgstr "Τα σχόλια είναι κλειστά."
+
+#: templates/blog/partial/post_comment_form.html:22
+msgid "Comments have been close for this post."
+msgstr "Τα σχόλια έχουν κλείσει για την δημοσίευση."
+
+#: templates/blog/partial/post_comments.html:8
+msgid "Comments"
+msgstr "Σχόλια"
+
+#: templates/blog/partial/post_comments.html:21
+msgid "since post."
+msgstr "μετά."
+
+#: templates/blog/partial/post_footer.html:6
+#, python-format
+msgid ""
+"\n"
+"<a href=\"%(url)s#comments\">%(counter)s comment</a> till now.\n"
+msgid_plural ""
+"\n"
+"<a href=\"%(url)s#comments\">%(counter)s comments</a> till now.\n"
+msgstr[0] ""
+"\n"
+"<a href=\"%(url)s#comments\">%(counter)s σχόλιο</a> μέχρι στιγμής.\n"
+msgstr[1] ""
+"\n"
+"<a href=\"%(url)s#comments\">%(counter)s σχόλια</a> μέχρι στιγμής.\n"
+
+#: templates/blog/partial/post_info.html:8
+#, python-format
+msgid "Written <abbr title=\"%(date)s\">%(time_passed)s ago</abbr>"
+msgstr "Γράφτηκε <abbr title=\"%(date)s\">πριν %(time_passed)s </abbr>"
+
+#: templates/blog/partial/post_info.html:9
+msgid ""
+"\n"
+"under the category\n"
+msgid_plural ""
+"\n"
+"under the categories\n"
+msgstr[0] ""
+"\n"
+"στην κατηγορία\n"
+msgstr[1] ""
+"\n"
+"στις κατηγοριές\n"
+
+#: templates/blog/partial/post_info.html:18
+#, python-format
+msgid ""
+"\n"
+"<a href=\"#comments\">%(counter)s comment</a> till now.\n"
+msgid_plural ""
+"\n"
+"<a href=\"#comments\">%(counter)s comments</a> till now.\n"
+msgstr[0] ""
+"\n"
+"<a href=\"#comments\">%(counter)s σχόλιο</a> μέχρι στιγμής.\n"
+msgstr[1] ""
+"\n"
+"<a href=\"#comments\">%(counter)s σχόλια</a> μέχρι στιγμής.\n"
+
+#: templates/blog/partial/whats_this.html:2
+msgid "What's this"
+msgstr "Τι 'ναι δω;"
+
+#: templates/blog/partial/whats_this.html:4
+msgid ""
+"\n"
+"Hello, My name is Christos Trochalakis, and this is my personal\n"
+"weblog. It's mostly around opensourse, django and ...me.\n"
+msgstr ""
+"\n"
+"Βρίσκεστε στο προσωπικό ιστολόγιο του Χρήστου Τροχαλάκη. Οι δημοσιεύσεις, "
+"όταν γίνουν, θα κινούνται ανάμεσα στο opensource, στο django και ...μένα.\n"
+
+#: templates/partial/sections.html:3
+msgid "blog"
+msgstr "ιστολόγιο"
+
+#: templates/partial/sections.html:4
+msgid "contact"
+msgstr "επικοινωνία"
+
+#: templates/threadedcomments/preview_comment.html:5
+#: templates/threadedcomments/preview_comment.html:8
+msgid "Preview comment"
+msgstr "Προεπισκόπηση σχολίου"
+
+#: templates/threadedcomments/preview_comment.html:22
+msgid "Check Comment"
+msgstr "Έλεγχος"
+
+#~ msgid "Αγγλικά"
+#~ msgstr "English"
