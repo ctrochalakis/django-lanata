@@ -1,0 +1,88 @@
+{% load i18n %}
+{% load blog tagging_tags feeds cache %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
+<head>
+	<title>Ma gavte la nata! {% block title %}{% endblock %}</title>
+	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+	<meta name="author" content="Jenna Smith" />
+	<meta name="copyright"	content="Copyright 2006 growldesign" />
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<link rel="alternate" type="application/rss+xml" title="{% trans "Ma gavte la nata: Latest Posts RSS 2.0 Feed" %}" href="{% url bblog_feeds "posts" %}" />
+	<link href="{{ MEDIA_URL }}css/codehighlight.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/bp/print.css" type="text/css" media="print" /> 
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/bp/screen.css" type="text/css" media="screen, projection" />
+	<!--[if IE]><link rel="stylesheet" href="{{ MEDIA_URL }}/css/bp/lib/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/bblog.css" type="text/css" media="screen, projection" />
+
+	{% block extra_feeds %}{% endblock %}
+</head>
+
+<body id="{% block body_id %}{% endblock %}">
+<div id="bblog" class="container">
+	<div id="header" class="column span-24">
+		{% include 'partial/sections.html' %}
+		<div id="nav">
+			<img src="{{ MEDIA_URL }}img/cork.png" />
+			<span id="name"><a href="{% url blog_index %}">ma gavte la nata</a></span>
+			<span id="moto">a blogging attempt</span>
+
+		</div>
+		<div id="languages">
+			{% include "i18n_form.html" %}
+			<a class="flag small" href="javascript:change_language('el')">Ελληνικά(el)</a>, <a class="small" href="javascript:change_language('en')">English(en)</a>
+		</div>
+	</div>
+	<!-- end header !-->
+	<div id="main" class="container">
+		<div id="left" class="column span-17 append-1">
+			<div id="content">
+				{% block body %}
+				    {% block content_title %}{% endblock %}
+				    {% block content %}{% endblock %}
+				    {% block extra_content %}{% endblock %}
+				{% endblock %}
+			</div>
+		</div>
+		<div id="right" class="column span-6 last">
+			<div id="sidebar">
+				{% block sidebar_head %}
+					{% include  "blog/partial/whats_this.html" %}
+				{% endblock %}
+				{% get_blog_categories as category_list %}
+				<h3>{% trans "Categories" %}</h3>
+				<ul>
+				{% for cat in category_list %}
+					<li><a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a></li>
+				{% endfor %}
+				</ul>
+
+				{% tags_for_model blog.Post as tag_list with counts %}
+				<h3 class="tags-sidebar">{% trans "Tags" %}</h3>
+				<p>
+				{% for tag in tag_list %}
+					<a href="{% url tag_index tag=tag %}">{{ tag }}</a>{% if not forloop.last %},{% endif %} 
+				{% endfor %}
+				</p>
+				<h3 class="feed">{% trans "del.icio.us" %}</h3>
+				{% cache 60 del_feed %}
+				{% include_feed "http://feeds.delicious.com/rss/yatiohi" 10 partial/links.html %}
+
+				{% endcache %}
+			</div>
+		</div>
+	</div>
+</div>
+<div id="footer">
+<p class="small">
+{% blocktrans %}
+Made with <a href="http://djangoproject.org/">Django</a>. Christos Trochalakis, Some Rights Reserved.
+<a href="http://validator.w3.org/check/referer">XHTML 1.1</a> |
+<a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css2">CSS</a>
+{% endblocktrans %}
+</p>
+</div>
+</body>
+</html>

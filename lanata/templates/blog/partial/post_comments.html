@@ -1,0 +1,31 @@
+{% load i18n %}
+{% load threadedcommentstags markuptags %}
+{% load local_datefilter %}
+
+{% get_free_threaded_comment_tree for object as comment_tree %}
+{% if comment_tree %}
+<div id="comments">
+	<h3 class="title">{% trans "Comments" %}</h3>
+	{% for comment in comment_tree %}
+		{% if comment.is_public %}
+		<div class="comment{% cycle row1,row2 %} span-17 last" >
+			<div class="comment_info column span-5">
+				<p><span>
+					{% if comment.website %}
+						<a href="{{ comment.website }}">{{ comment.name }}</a>
+					{% else %}
+						{{ comment.name }}
+					{% endif %}
+				</span><br />
+				<span>
+					<abbr title="{{ comment.date_submitted|ldate:"d {Fp} y" }}">{{ comment.date_submitted|timesince:object.publish }} {% trans "since post." %}</abbr>
+				</span></p>
+			</div>
+			<div class="comment_body column span-12 last">
+				{{ comment|markup_chain }}
+			</div>
+		</div>
+		{% endif %}
+	{% endfor %}
+</div>
+{% endif %}

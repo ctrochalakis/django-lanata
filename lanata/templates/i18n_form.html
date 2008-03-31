@@ -1,0 +1,13 @@
+<script type="text/javascript">
+//<![CDATA[
+function change_language(lang_code) {
+	var form = document.forms['lang_form']
+	form.language.value = lang_code;
+	form.submit();
+}
+//]]>
+</script>
+
+<form action="/i18n/setlang/" id="lang_form" method="post">
+		<input type="hidden" name="language" />
+</form>

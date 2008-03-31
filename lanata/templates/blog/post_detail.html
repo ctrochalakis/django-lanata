@@ -1,0 +1,14 @@
+{% extends "blog/base_blog.html" %}
+
+{% block title %}{{ object.title }}{% endblock %}
+	
+{% block sidebar_head %}
+{% include "blog/partial/post_info.html" %}
+{% endblock %}
+
+{% block content %}
+{% include "blog/partial/post.html" %}
+{% include "blog/partial/post_comments.html" %}
+{% include "blog/partial/post_comment_form.html" %}
+{% endblock content %}
+

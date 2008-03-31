@@ -1,0 +1,11 @@
+{% load i18n %}
+{% load threadedcommentstags %}
+
+{% get_free_comment_count for object as comment_count %}
+<div class="post_footer">
+{% blocktrans count comment_count as counter and object.get_absolute_url as url %}
+<a href="{{ url }}#comments">{{ counter }} comment</a> till now.
+{% plural %}
+<a href="{{ url }}#comments">{{ counter }} comments</a> till now.
+{% endblocktrans %}&rarr;
+</div>

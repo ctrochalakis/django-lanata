@@ -1,0 +1,12 @@
+{% extends "blog/base_blog.html" %}
+{% load i18n %}
+{% load markuptags %}
+
+{% block title %}{% trans "Latest Posts" %}{% endblock %}
+
+{% block content %}
+		{% for object in object_list %}
+			{% include "blog/partial/post.html" %}
+			{% include "blog/partial/post_footer.html" %}
+		{% endfor %}
+{% endblock content %}

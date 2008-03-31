@@ -1,0 +1,26 @@
+{% extends "blog/base_blog.html" %}
+{% load i18n %}
+{% load threadedcommentstags %}
+
+{% block title %}{% trans "Preview comment" %}{% endblock %}
+
+{% block content_title %}
+  <h2 class="page_title">{% trans "Preview comment" %}</h2>
+{% endblock %}
+
+{% block content %}
+{% if comment %}
+        <div class="comment">{% auto_transform_markup comment %}</div>
+{% endif %}
+
+   <div id="comment_form">
+     <form method="POST" action="">
+						<table>
+            {{ form.as_table }}
+						</table>
+	    <p><input type="submit" value="{% trans "Submit Comment" %}" /></p>
+	    <p><input type="submit" value="{% trans "Check Comment" %}" name="preview" /></p>
+            <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+    </div>
+{% endblock %}

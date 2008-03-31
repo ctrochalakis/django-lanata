@@ -1,0 +1,147 @@
+body {
+	color: #1F1409;
+	font-family:"Lucida Sans Unicode",Verdana,"Lucida Grande",sans-serif;
+	font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 { color: #444; }
+
+h2 { border-bottom: 1px solid #ccc;}
+
+a, a:hover {
+	text-decoration: none;
+	color: #328f13;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+ul {
+	list-style-image: url(/static/img/cork-sm.png);
+}
+
+label {
+	display: block;
+}
+
+input:hover, textarea:hover {
+		border:1px solid #e48e41;
+}
+
+input, textarea {
+	border:1px solid #AAAAAA;
+	padding:2px 5px;
+}
+
+textarea {
+	width: 70%
+}
+
+/* Navigation */
+
+#header { margin-bottom: 3em;}
+
+#name {
+	font-size: 1.7em;
+	color: #9c0;
+}
+
+#moto {
+	margin-left: 1em;
+	font-size: 1.3em;
+}
+
+#sections { float: right; margin: 0; padding:0 }
+#sections li { display: inline; margin-right: 1.2em; font-size: 1em }
+.on {
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+/* Main Site */
+
+/*#content, #comments { padding-right: 1em; }*/
+#sidebar { padding-left: 1em; }
+
+#content p {
+	padding-right: 2em;
+	text-align: justify; 
+}
+
+.post h3 { color: #e48e41;}
+#content h2 { font-family: Georgia;}
+	
+.post-body a {
+	font-weight: bold;
+	color: #222;
+	background-color: #EFFFBF;
+}
+
+.post-body a:hover {
+	color: #6A8F00;
+}
+.post_footer {
+	text-align: right;
+}
+.date {
+	float:right;
+}
+.commentrow1 {background-color: #F0F0F0;}
+.commentrow2 {}
+
+#comment-suggest {
+	float: right;
+	width: 50%;
+}
+
+.title {
+/*	color: #328f13;*/
+}
+
+#footer {
+	border-top: 1px solid #AAAAAA;
+	background-color: #1F1409;
+	color: white;
+	text-align: right;
+}
+#footer p{
+	margin-right: 1.5em;
+	margin-left: 1.5em;
+	vertical-align: bottom;
+}
+
+/* Metaxwtes kordeles */
+ul.delicious {
+	list-style-image: url(/static/img/delicious.gif);
+}
+
+.flag:before {
+	content: url(../img/flag_blue.png);
+	padding-right: 5px;
+	
+}
+/*
+.date:after {
+	content: url(../img/date.png);
+	padding-left: 5px;
+	
+}
+*/
+.feed:after {
+	content: url(../img/feed.png);
+	padding-left: 5px;
+}
+
+.tags:before {
+	content: url(../img/tag_green.png);
+	margin-right: 2px;
+}
+
+/* Utilities */
+.rfloat {
+	float: right;
+}
+.lfloat {
+	float: left;
+}

@@ -1,0 +1,12 @@
+{% extends "blog/post_list.html" %}
+{% load i18n %}
+
+{% block title %}
+	{% blocktrans with tag as tag_title %}Posts for {{ tag_title }}{% endblocktrans %}
+{% endblock %}
+
+{% block content_title %}
+<h2>
+	{% blocktrans with tag as tag_title %}Posts for {{ tag_title }}{%endblocktrans %}
+</h2>
+{% endblock %}

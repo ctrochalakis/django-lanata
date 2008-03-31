@@ -1,0 +1,25 @@
+{% load i18n %}
+{% load local_datefilter %}
+{% load threadedcommentstags %}
+
+{% get_free_comment_count for object as comment_count %}
+<div class="small">
+<p><strong>{{ object.title }}:</strong><br />
+{% blocktrans with object.publish|ldate:"d {Fp} y" as date and object.publish|timesince as time_passed %}Written <abbr title="{{ date }}">{{ time_passed }} ago</abbr>{% endblocktrans %}
+{% blocktrans count object.categories.count as counter %}
+under the category
+{% plural %}
+under the categories
+{% endblocktrans %}
+{% for cat in object.categories.all %}
+<a href="{{cat.get_absolute_url}}">{{ cat.title }}</a>{% if not forloop.last %}, {% endif %}
+{% endfor %}.
+<br />
+{% blocktrans count comment_count as counter %}
+<a href="#comments">{{ counter }} comment</a> till now.
+{% plural %}
+<a href="#comments">{{ counter }} comments</a> till now.
+{% endblocktrans %}<br />
+{% include "blog/partial/post_tags.html" %}
+</p>
+</div>
