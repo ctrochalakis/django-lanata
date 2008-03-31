@@ -98,6 +98,10 @@ textarea {
 .title {
 /*	color: #328f13;*/
 }
+#comments, #comment_form {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
 
 #footer {
 	border-top: 1px solid #AAAAAA;

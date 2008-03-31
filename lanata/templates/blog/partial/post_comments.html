@@ -4,7 +4,7 @@
 
 {% get_free_threaded_comment_tree for object as comment_tree %}
 {% if comment_tree %}
-<div id="comments">
+<div id="comments" class="span-17 last">
 	<h3 class="title">{% trans "Comments" %}</h3>
 	{% for comment in comment_tree %}
 		{% if comment.is_public %}
