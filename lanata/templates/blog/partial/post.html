@@ -2,6 +2,6 @@
 <div class="post">
 	<h2><a href="{{ object.get_absolute_url }}">{{ object.title }}</a></h2>
 	<div class="post-body">
-		{{ object.body|markup_chain }}
+		{{ object.body_html }}
 	</div>
 </div>
