@@ -12,6 +12,7 @@ feeds = {
 }
 
 urlpatterns = patterns('',
+    ('^$', 'django.views.generic.simple.redirect_to', {'url' : '/blog/'}),
     (r'^admin/', include('django.contrib.admin.urls')),
     url(r'^blog/tags/(?P<tag>[^/]+)/$',
         tagged_object_list,
