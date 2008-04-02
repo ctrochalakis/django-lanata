@@ -42,7 +42,6 @@ class TagPostFeed(BasePostFeed):
     if len(bits) != 1:
       raise ObjectDoesNotExist
     tags = bits[0].split('+')
-    self.tags_exist = (Post.tagging.filter(name__in=tags).count() == len(tags))
     return tags
 
   def title(self, obj):
@@ -55,13 +54,7 @@ class TagPostFeed(BasePostFeed):
     return reverse('tag_index', None, {'tag': '+'.join(obj)} )
 
   def items(self, obj):
-    # `with_all()` method doesn't check if the supplied tags are valid,
-    # it silently doesn't use them. The results are broken.
-    # We workaround the issue by using `tags_exist`.
-    if self.tags_exist:
-      posts = Post.tagged.with_all(obj).filter(
+    posts = TaggedItem.objects.get_by_model(Post,obj).filter(
         status__gte=2, publish__lte=datetime.datetime.now())
-    else:
-      posts = []
     return posts
 
