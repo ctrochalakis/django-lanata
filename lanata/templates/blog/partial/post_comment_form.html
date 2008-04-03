@@ -1,6 +1,7 @@
 {% load i18n %}
-{% load threadedcommentstags %}
+{% load cache %}
   {% if object.allow_comments %}
+{% cache 86400 form LANGUAGE_CODE %}
   <div id="comment_form" class="column span-17 last">
   <h3 class="title">{% trans "Make a comment!" %}</h3>
 <div id="comment-suggest">
@@ -12,11 +13,13 @@ You can use markdown syntax.
 {% endblocktrans %}
 </p>
 </div>
+    {% load threadedcommentstags %}
     <form method="POST" action="{% get_free_comment_url object %}">
             {% get_free_threaded_comment_form as form %}
             {{ form.as_p }}
             <p><input type="submit" value="{% trans "Submit Comment" %}" /></p>
     </form>
+{% endcache %}
   {% else %}
       <h3>{% trans "Comments are closed." %}</h3>
       <p>{% trans "Comments have been close for this post." %}</p>

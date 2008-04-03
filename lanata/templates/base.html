@@ -5,10 +5,10 @@
 <head>
 	<title>Ma gavte la nata! {% block title %}{% endblock %}</title>
 	<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
-	<meta name="author" content="Jenna Smith" />
-	<meta name="copyright"	content="Copyright 2006 growldesign" />
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+	<meta name="author" content="Christos Trochalakis" />
+	<meta name="copyright"	content="Christos Trochalakis" />
+	<meta name="keywords" content="django blog trochalakis opensource" />
+	<meta name="description" content="Just a weblog!" />
 	<meta http-equiv="imagetoolbar" content="no" />
 	<link rel="alternate" type="application/rss+xml" title="{% trans "Ma gavte la nata: Latest Posts RSS 2.0 Feed" %}" href="{% url bblog_feeds "posts" %}" />
 	<link href="{{ MEDIA_URL }}css/codehighlight.css" rel="stylesheet" type="text/css" />
@@ -20,6 +20,7 @@
 	{% block extra_feeds %}{% endblock %}
 </head>
 
+{% cache 86400 header LANGUAGE_CODE %}
 <body id="{% block body_id %}{% endblock %}">
 <div id="bblog" class="container">
 	<div id="header" class="column span-24">
@@ -39,6 +40,7 @@
 	<div id="main" class="container">
 		<div id="left" class="column span-17 append-1">
 			<div id="content">
+{% endcache %}
 				{% block body %}
 				    {% block content_title %}{% endblock %}
 				    {% block content %}{% endblock %}
@@ -75,6 +77,7 @@
 		</div>
 	</div>
 </div>
+{% cache 86400 footer LANGUAGE_CODE %}
 <div id="footer">
 <p class="small">
 {% blocktrans %}
@@ -85,4 +88,5 @@ Made with <a href="http://djangoproject.org/">Django</a>. Christos Trochalakis, 
 </p>
 </div>
 </body>
+{% endcache %}
 </html>
