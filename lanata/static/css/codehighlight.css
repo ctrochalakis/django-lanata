@@ -21,7 +21,7 @@ div.codehighlight pre {
 }
 
 .codehighlight td.linenos {
-    background-color:ccc;
+    background-color: #ccc;
 }
 
 .codehighlight { background: #f2f2f2; }

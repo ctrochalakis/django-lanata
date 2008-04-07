@@ -14,7 +14,7 @@ You can use markdown syntax.
 </p>
 </div>
     {% load threadedcommentstags %}
-    <form method="POST" action="{% get_free_comment_url object %}">
+    <form method="post" action="{% get_free_comment_url object %}">
             {% get_free_threaded_comment_form as form %}
             {{ form.as_p }}
             <p><input type="submit" value="{% trans "Submit Comment" %}" /></p>
