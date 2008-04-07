@@ -11,12 +11,15 @@ feeds = {
     'tags': TagPostFeed,
 }
 
+def published_posts():
+    return Post.objects.published()
+
 urlpatterns = patterns('',
     ('^$', 'django.views.generic.simple.redirect_to', {'url' : '/blog/'}),
     (r'^admin/', include('django.contrib.admin.urls')),
     url(r'^blog/tags/(?P<tag>[^/]+)/$',
         tagged_object_list,
-        dict(queryset_or_model=Post.objects.published(), paginate_by=10, allow_empty=True, template_name='blog/tag_detail.html'),
+        dict(queryset_or_model=published_posts(), paginate_by=10, allow_empty=True, template_name='blog/tag_detail.html'),
         name='tag_index'
     ),
     (r'^blog/', include('blog.urls')),
