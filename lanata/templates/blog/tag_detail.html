@@ -2,11 +2,19 @@
 {% load i18n %}
 
 {% block title %}
-	{% blocktrans with tag as tag_title %}Posts for {{ tag_title }}{% endblocktrans %}
+	{% blocktrans with tag as title %}Posts for {{ title }}{% endblocktrans %}
 {% endblock %}
 
 {% block content_title %}
 <h2>
 	{% blocktrans with tag as tag_title %}Posts for {{ tag_title }}{%endblocktrans %}
 </h2>
+{% endblock %}
+
+{% block extra_feeds %}
+<link rel="alternate" type="application/rss+xml" title="
+{% blocktrans with tag as title %}
+Ma gavte la nata: Latest Posts in tag {{ title }} RSS 2.0 Feed
+{% endblocktrans %}"
+href="{% url bblog_tag_feeds tag %}" />
 {% endblock %}

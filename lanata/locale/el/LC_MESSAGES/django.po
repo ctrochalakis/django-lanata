@@ -1,4 +1,4 @@
-# translation of django.po to greek
+# translation of django.po to Greek
 # Copyright (C) 2008 THE bblog'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the bblog package.
 #
@@ -9,21 +9,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-03-31 18:44+0300\n"
-"PO-Revision-Date: 2008-03-31 11:59+0300\n"
+"POT-Creation-Date: 2008-04-07 15:47+0300\n"
+"PO-Revision-Date: 2008-04-07 15:48+0300\n"
 "Last-Translator: Christos Trochalakis <yatiohi@ideopolis.gr>\n"
-"Language-Team: greek <django-gr@googlegroups.com>\n"
+"Language-Team: Greek\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: sample_settings.py:105 settings.py:106
+#: sample_settings.py:107
 msgid "Greek"
 msgstr "Ελληνικά"
 
-#: sample_settings.py:106 settings.py:107
+#: sample_settings.py:108
 msgid "English"
 msgstr "Αγγλικά"
 
@@ -31,19 +31,19 @@ msgstr "Αγγλικά"
 msgid "Ma gavte la nata: Latest Posts RSS 2.0 Feed"
 msgstr "Ma gavte la nata: Πηγή RSS Τελευταίων δημοσιεύσεων"
 
-#: templates/base.html:55
+#: templates/base.html:57
 msgid "Categories"
 msgstr "Κατηγορίες"
 
-#: templates/base.html:63
+#: templates/base.html:65
 msgid "Tags"
 msgstr "ετικέτες"
 
-#: templates/base.html:69
+#: templates/base.html:71
 msgid "del.icio.us"
 msgstr "del.icio.us"
 
-#: templates/base.html:80
+#: templates/base.html:83
 msgid ""
 "\n"
 "Made with <a href=\"http://djangoproject.org/\">Django</a>. Christos "
@@ -60,10 +60,19 @@ msgstr ""
 "profile=css2\">CSS</a>\n"
 
 #: templates/blog/category_detail.html:6
-#: templates/blog/category_detail.html:11
+#: templates/blog/category_detail.html:11 templates/blog/tag_detail.html:5
 #, python-format
-msgid "Posts for %(cat_title)s"
-msgstr "%(cat_title)s"
+msgid "Posts for %(title)s"
+msgstr "%(title)s"
+
+#: templates/blog/category_detail.html:17
+#, python-format
+msgid ""
+"\n"
+"Ma gavte la nata: Latest Posts in category %(title)s RSS 2.0 Feed\n"
+msgstr ""
+"\n"
+"Ma gavte la nata: Πηγή RSS Τελευταίων δημοσιεύσεων στην κατηγορία %(title)s\n"
 
 #: templates/blog/category_list.html:5 templates/blog/category_list.html:9
 msgid "Post categories"
@@ -73,20 +82,29 @@ msgstr "Κατηγορίες"
 msgid "Latest Posts"
 msgstr "Τελευταίες δημοσιεύσεις"
 
-#: templates/blog/tag_detail.html:5 templates/blog/tag_detail.html.py:10
+#: templates/blog/tag_detail.html:10
 #, python-format
 msgid "Posts for %(tag_title)s"
 msgstr "Ετικέτα: %(tag_title)s"
 
-#: templates/blog/partial/post_comment_form.html:5
+#: templates/blog/tag_detail.html:16
+#, python-format
+msgid ""
+"\n"
+"Ma gavte la nata: Latest Posts in tag %(title)s RSS 2.0 Feed\n"
+msgstr ""
+"\n"
+"Ma gavte la nata: Πηγή RSS Τελευταίων δημοσιεύσεων με ετικέτα %(title)s\n"
+
+#: templates/blog/partial/post_comment_form.html:6
 msgid "Make a comment!"
 msgstr "Εσείς πάλι, τι λέτε για όλα αυτά;"
 
-#: templates/blog/partial/post_comment_form.html:7
+#: templates/blog/partial/post_comment_form.html:8
 msgid "About Comments"
 msgstr "Περί σχολίων"
 
-#: templates/blog/partial/post_comment_form.html:9
+#: templates/blog/partial/post_comment_form.html:10
 msgid ""
 "\n"
 "Your email won't be published for any reason. It's only kept for archive "
@@ -98,16 +116,16 @@ msgstr ""
 "λόγους επικοινωνίας κ' αρχείου. Μπορείτε να χρησιμοποιήσετε σύνταξη "
 "Markdown.\n"
 
-#: templates/blog/partial/post_comment_form.html:18
+#: templates/blog/partial/post_comment_form.html:20
 #: templates/threadedcomments/preview_comment.html:21
 msgid "Submit Comment"
 msgstr "Υποβολή"
 
-#: templates/blog/partial/post_comment_form.html:21
+#: templates/blog/partial/post_comment_form.html:24
 msgid "Comments are closed."
 msgstr "Τα σχόλια είναι κλειστά."
 
-#: templates/blog/partial/post_comment_form.html:22
+#: templates/blog/partial/post_comment_form.html:25
 msgid "Comments have been close for this post."
 msgstr "Τα σχόλια έχουν κλείσει για την δημοσίευση."
 
@@ -199,5 +217,3 @@ msgstr "Προεπισκόπηση σχολίου"
 msgid "Check Comment"
 msgstr "Έλεγχος"
 
-#~ msgid "Αγγλικά"
-#~ msgstr "English"

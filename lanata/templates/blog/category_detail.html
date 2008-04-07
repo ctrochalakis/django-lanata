@@ -3,11 +3,19 @@
 {% load markuptags %}
 
 {% block title %}
-	{% blocktrans with category.title as cat_title %}Posts for {{ cat_title }}{% endblocktrans %}
+	{% blocktrans with category.title as title %}Posts for {{ title }}{% endblocktrans %}
 {% endblock %}
 
 {% block content_title %}
 <h2 class="page_title">
-	{% blocktrans with category.title as cat_title %}Posts for {{ cat_title }}{%endblocktrans %}
+	{% blocktrans with category.title as title %}Posts for {{ title }}{% endblocktrans %}
 </h2>
+{% endblock %}
+
+{% block extra_feeds %}
+<link rel="alternate" type="application/rss+xml" title="
+{% blocktrans with category.title as title %}
+Ma gavte la nata: Latest Posts in category {{ title }} RSS 2.0 Feed
+{% endblocktrans %}"
+href="{% url bblog_category_feeds category.slug %}" />
 {% endblock %}
