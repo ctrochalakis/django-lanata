@@ -53,21 +53,27 @@
 				{% block sidebar_head %}
 					{% include  "blog/partial/whats_this.html" %}
 				{% endblock %}
-				{% get_blog_categories as category_list %}
+
+				{% block sb-categories %}
 				<h3>{% trans "Categories" %}</h3>
 				<ul>
+				{% get_blog_categories as category_list %}
 				{% for cat in category_list %}
 					<li><a href="{{ cat.get_absolute_url }}">{{ cat.title }}</a></li>
 				{% endfor %}
 				</ul>
+				{% endblock sb-categories %}
 
+				{% block sb-tags %}
 				{% tags_for_model blog.Post as tag_list with counts %}
 				<h3 class="tags-sidebar">{% trans "Tags" %}</h3>
 				<p>
 				{% for tag in tag_list %}
-					<a href="{% url tag_index tag=tag %}">{{ tag }}</a>{% if not forloop.last %},{% endif %} 
+					<a href="{% url tag_index tag=tag %}">{{ tag }}</a>{% if not forloop.last %},{% endif %}
 				{% endfor %}
 				</p>
+				{% endblock sb-tags %}
+
 				<h3 class="feed">{% trans "del.icio.us" %}</h3>
 				{% cache 60 del_feed %}
 				{% include_feed "http://feeds.delicious.com/rss/yatiohi" 10 partial/links.html %}
