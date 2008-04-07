@@ -1,4 +1,4 @@
-# Django settings for useful_templatetags project.
+import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -25,7 +25,7 @@ TIME_ZONE = 'Europe/Athens'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'el'
 
 SITE_ID = 1
 
@@ -35,7 +35,7 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'static')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -62,6 +62,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.doc.XViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware'
 )
 
 ROOT_URLCONF = 'sample_urls'
@@ -70,6 +71,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(os.path.dirname(__file__), 'templates'),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -108,9 +110,16 @@ LANGUAGES = (
 
 #markup_chain
 MARKUP_CHAIN = (
+    'markup_utils.filters.simple_replace',
     'markdown.markdown',
     'markup_utils.filters.code_highlighter',
 )
+
+MARKUP_SIMPLE_REPLACE = (
+    dict(element='span',klass='dj-ticket',
+        replace_with="[#%(content)s](http://code.djangoproject.com/ticket/%(content)s)"),
+)
+
 
 #threadedcomments
 DEFAULT_MARKUP = 1
