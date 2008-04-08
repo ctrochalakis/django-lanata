@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-07 15:47+0300\n"
-"PO-Revision-Date: 2008-04-07 15:48+0300\n"
+"POT-Creation-Date: 2008-04-08 12:41+0300\n"
+"PO-Revision-Date: 2008-04-08 12:42+0300\n"
 "Last-Translator: Christos Trochalakis <yatiohi@ideopolis.gr>\n"
 "Language-Team: Greek\n"
 "MIME-Version: 1.0\n"
@@ -31,19 +31,19 @@ msgstr "Αγγλικά"
 msgid "Ma gavte la nata: Latest Posts RSS 2.0 Feed"
 msgstr "Ma gavte la nata: Πηγή RSS Τελευταίων δημοσιεύσεων"
 
-#: templates/base.html:57
+#: templates/base.html:58
 msgid "Categories"
 msgstr "Κατηγορίες"
 
-#: templates/base.html:65
+#: templates/base.html:69
 msgid "Tags"
 msgstr "ετικέτες"
 
-#: templates/base.html:71
+#: templates/base.html:77
 msgid "del.icio.us"
 msgstr "del.icio.us"
 
-#: templates/base.html:83
+#: templates/base.html:89
 msgid ""
 "\n"
 "Made with <a href=\"http://djangoproject.org/\">Django</a>. Christos "
@@ -109,12 +109,14 @@ msgid ""
 "\n"
 "Your email won't be published for any reason. It's only kept for archive "
 "reasons if i want to contact you.\n"
-"You can use markdown syntax.\n"
+"You can use <a href=\"http://daringfireball.net/projects/markdown/syntax"
+"\">markdown syntax</a>.\n"
 msgstr ""
 "\n"
 "Να ξέρετε, η διεύθυνσή σας δεν θα δημοσιοποιηθεί. Το πεδίο υπάρχει απλά για "
-"λόγους επικοινωνίας κ' αρχείου. Μπορείτε να χρησιμοποιήσετε σύνταξη "
-"Markdown.\n"
+"λόγους επικοινωνίας κ' αρχείου. Μπορείτε να χρησιμοποιήσετε <a href=\"http://daringfireball.net/projects/markdown/syntax"
+"\">σύνταξη "
+"Markdown</a>.\n"
 
 #: templates/blog/partial/post_comment_form.html:20
 #: templates/threadedcomments/preview_comment.html:21
