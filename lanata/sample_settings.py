@@ -123,3 +123,5 @@ MARKUP_SIMPLE_REPLACE = (
 
 #threadedcomments
 DEFAULT_MARKUP = 1
+
+SERVE_STATIC = False

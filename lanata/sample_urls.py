@@ -34,7 +34,7 @@ urlpatterns = patterns('',
     (r'^i18n/', include('django.conf.urls.i18n')),
 )
 
-if settings.DEBUG:
+if settings.SERVE_STATIC:
     urlpatterns += patterns('',
         (r'^static/(?P<path>.*)$', 'django.views.static.serve', 
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}
