@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load cache %}
+
+{% block title %}{% trans "Page unavailable" %}{% endblock %}
+
+{% block content %}
+{% cache 86400 500 LANGUAGE_CODE %}
+<h2>500: {% trans "Page unavailable" %}</h2>
+
+<p>
+{% blocktrans %}
+The requested page is unavailable possibly due to a server error. If you see this page, please <a href="mailto:yatiohi /at/ ideopolis.gr">let me know</a>.</p>
+{% endblocktrans %}
+{% endcache %}
+</p>
+{% endblock %}
+

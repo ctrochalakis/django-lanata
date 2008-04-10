@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load cache %}
+
+{% block title %}{% trans "Page not found" %}{% endblock %}
+
+{% block content %}
+{% cache 86400 500 LANGUAGE_CODE %}
+<h2>404: {% trans "Page not found" %}</h2>
+
+<p>
+{% blocktrans %}
+Looks like the page you requested doesn't exist. If you think that shouldn't have happened, please <a href="mailto:yatiohi /at/ ideopolis.gr">let me know</a>.</p>
+{% endblocktrans %}
+{% endcache %}
+</p>
+{% endblock %}
+
