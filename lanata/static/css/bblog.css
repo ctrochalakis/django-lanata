@@ -21,6 +21,10 @@ ul {
 	list-style-image: url(/static/img/cork-sm.png);
 }
 
+code {
+	border-bottom:1px solid #e48e41;
+}
+
 label {
 	display: block;
 }
