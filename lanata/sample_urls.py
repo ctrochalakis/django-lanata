@@ -1,12 +1,15 @@
 from django.conf.urls.defaults import * 
 from django.conf import settings
-from blog.models import Post
-from blog.feeds import BlogPostFeed
+from basic.blog.models import Post
+from basic.blog.feeds import BlogPostsFeed
 from feeds import CategoryPostFeed, TagPostFeed
 from tagging.views import tagged_object_list
 
+from django.contrib import admin
+admin.autodiscover()
+
 feeds = {
-    'posts': BlogPostFeed,
+    'posts': BlogPostsFeed,
     'categories': CategoryPostFeed,
     'tags': TagPostFeed,
 }
@@ -16,13 +19,13 @@ def published_posts():
 
 urlpatterns = patterns('',
     ('^$', 'django.views.generic.simple.redirect_to', {'url' : '/blog/'}),
-    (r'^admin/', include('django.contrib.admin.urls')),
+    (r'^admin/(.*)', admin.site.root),
     url(r'^blog/tags/(?P<tag>[^/]+)/$',
         tagged_object_list,
         dict(queryset_or_model=published_posts(), paginate_by=10, allow_empty=True, template_name='blog/tag_detail.html'),
         name='tag_index'
     ),
-    (r'^blog/', include('blog.urls')),
+    url(r'^blog/', include('basic.blog.urls')),
     (r'^threadedcomments/', include('threadedcomments.urls')),
     (r'^(?P<url>pages/.*/)$', 'django.contrib.flatpages.views.flatpage'),
     url(r'^feeds/posts/$', 'views.slug_feed',

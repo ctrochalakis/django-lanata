@@ -3,7 +3,7 @@ from django.contrib.syndication.feeds import Feed
 from django.core.urlresolvers import reverse
 from django.core.exceptions import ObjectDoesNotExist
 from tagging.models import Tag, TaggedItem
-from blog.models import Post, Category
+from basic.blog.models import Post, Category
 import datetime
 
 class BasePostFeed(Feed):
