@@ -39,7 +39,11 @@ urlpatterns = patterns('',
 
 if settings.SERVE_STATIC:
     urlpatterns += patterns('',
+        (r'static/css/bp/(?P<suffix>.*)$', 'lanata.views.alias_redirect',
+            {'base' : 'http://blueprintcss.org/blueprint/'}
+        ),
         (r'^static/(?P<path>.*)$', 'django.views.static.serve', 
             {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}
         ),
     )
+
