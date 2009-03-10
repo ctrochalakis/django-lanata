@@ -96,6 +96,7 @@ INSTALLED_APPS = (
     'tagging',
     'basic.blog',
     'basic.inlines',
+    'lanata.glue',
 )
 
 #tagging

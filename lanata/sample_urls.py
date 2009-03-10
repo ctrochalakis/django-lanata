@@ -2,7 +2,7 @@ from django.conf.urls.defaults import *
 from django.conf import settings
 from basic.blog.models import Post
 from basic.blog.feeds import BlogPostsFeed
-from feeds import CategoryPostFeed, TagPostFeed
+from lanata.glue.feeds import CategoryPostFeed, TagPostFeed
 from tagging.views import tagged_object_list
 
 from django.contrib import admin
@@ -28,18 +28,18 @@ urlpatterns = patterns('',
     url(r'^blog/', include('basic.blog.urls')),
     (r'^threadedcomments/', include('threadedcomments.urls')),
     (r'^(?P<url>pages/.*/)$', 'django.contrib.flatpages.views.flatpage'),
-    url(r'^feeds/posts/$', 'views.slug_feed',
+    url(r'^feeds/posts/$', 'lanata.glue.views.slug_feed',
         {'feed_dict': feeds, 'slug': 'posts'}, name='bblog_posts_feed'),
-    url(r'^feeds/categories/(?P<param>.*)/$', 'views.slug_feed',
+    url(r'^feeds/categories/(?P<param>.*)/$', 'lanata.glue.views.slug_feed',
         {'feed_dict': feeds, 'slug':'categories'}, name='bblog_category_feeds'),
-    url(r'^feeds/tags/(?P<param>.*)/$', 'views.slug_feed',
+    url(r'^feeds/tags/(?P<param>.*)/$', 'lanata.glue.views.slug_feed',
         {'feed_dict': feeds, 'slug':'tags'}, name='bblog_tag_feeds'),
     (r'^i18n/', include('django.conf.urls.i18n')),
 )
 
 if settings.SERVE_STATIC:
     urlpatterns += patterns('',
-        (r'static/css/bp/(?P<suffix>.*)$', 'lanata.views.alias_redirect',
+        (r'static/css/bp/(?P<suffix>.*)$', 'lanata.glue.views.alias_redirect',
             {'base' : 'http://blueprintcss.org/blueprint/'}
         ),
         (r'^static/(?P<path>.*)$', 'django.views.static.serve', 
