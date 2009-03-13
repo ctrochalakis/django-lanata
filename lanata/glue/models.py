@@ -22,5 +22,6 @@ class PostModerator(CommentModerator):
     akismet = True
     enable_field = 'allow_comments'
     allowed_markup = (1,) #Markdown
+    email_notification = True
 
 moderator.register(Post, PostModerator)
