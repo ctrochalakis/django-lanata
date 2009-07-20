@@ -10,8 +10,9 @@ Requirements
   * blog
   * tagging
   * threadedcomments
+  * comment_utils
   * localdates
-  * markup_utils
+  * markuputils
 
 Templates
 
@@ -22,6 +23,24 @@ All these apps are loosely-coupled and it's easy to remove anything
 you don't find useful.
 
 Any ideas/patches/bugs-reports are more than welcome.
+
+Instalation
+
+$ easy_install Django django-localdates feedparser \
+markdown2 pygments markuputils
+
+$ easy_install -f \
+http://www.crummy.com/software/BeautifulSoup/download/3.x/ \
+'Beautifuoup==3.0.7a'
+
+$ easy_install -f http://ctrochalakis.org/basket/ basic \
+tagging template_utils comment_utils-lanata django-threadedcomments-lanata
+
+$ easy_install -f http://code.google.com/p/django-comment-utils/downloads/list comment_utils
+
+#Devel
+$ easy_install -f http://ctrochalakis.org/basket/ django_extensions
+$ easy_install Werkzeug
 
 -- 
 Christos Trochalakis <yatiohi /at/ ideopolis.gr>
