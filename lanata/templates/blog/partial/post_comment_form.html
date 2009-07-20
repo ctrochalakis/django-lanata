@@ -1,7 +1,7 @@
 {% load i18n %}
 {% load cache %}
   {% if object.allow_comments %}
-{% cache 86400 form LANGUAGE_CODE %}
+{% cache 86400 form object.pk LANGUAGE_CODE %}
   <div id="comment_form" class="column span-17 last">
   <h3 class="title">{% trans "Make a comment!" %}</h3>
 <div id="comment-suggest">
