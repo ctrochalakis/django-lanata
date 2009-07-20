@@ -13,9 +13,9 @@ You can use <a href="http://daringfireball.net/projects/markdown/syntax">markdow
 {% endblocktrans %}
 </p>
 </div>
-    {% load threadedcommentstags %}
+    {% load threadedcommentstags lanatatags %}
     <form method="post" action="{% get_free_comment_url object %}">
-            {% get_free_threaded_comment_form as form %}
+            {% get_nomarkup_comment_form as form %}
             {{ form.as_p }}
             <p><input type="submit" value="{% trans "Submit Comment" %}" /></p>
     </form>
