@@ -54,6 +54,11 @@
 					{% include  "blog/partial/whats_this.html" %}
 				{% endblock %}
 
+				<h3 class="feed">{% trans "FriendFeed" %}</h3>
+				{% cache 60 my_friendfeed %}
+				{% ff_user_feed "ctrochalakis" 10 partial/ff.html %}
+				{% endcache %}
+
 				{% block sb-categories %}
 				<h3>{% trans "Categories" %}</h3>
 				<ul>
@@ -73,11 +78,6 @@
 				{% endfor %}
 				</p>
 				{% endblock sb-tags %}
-
-				<h3 class="feed">{% trans "FriendFeed" %}</h3>
-				{% cache 60 my_friendfeed %}
-				{% ff_user_feed "ctrochalakis" 10 partial/ff.html %}
-				{% endcache %}
 
 			</div>
 		</div>
