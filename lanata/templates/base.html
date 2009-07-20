@@ -1,5 +1,5 @@
 {% load i18n %}
-{% load blog tagging_tags feeds cache %}
+{% load blog tagging_tags cache fftags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" >
 <head>
@@ -74,11 +74,11 @@
 				</p>
 				{% endblock sb-tags %}
 
-				<h3 class="feed">{% trans "del.icio.us" %}</h3>
-				{% cache 60 del_feed %}
-				{% include_feed "http://feeds.delicious.com/rss/yatiohi" 10 partial/links.html %}
-
+				<h3 class="feed">{% trans "FriendFeed" %}</h3>
+				{% cache 60 my_friendfeed %}
+				{% ff_user_feed "ctrochalakis" 10 partial/ff.html %}
 				{% endcache %}
+
 			</div>
 		</div>
 	</div>
