@@ -19,7 +19,7 @@ def published_posts():
 
 urlpatterns = patterns('',
     ('^$', 'django.views.generic.simple.redirect_to', {'url' : '/blog/'}),
-    (r'^admin/(.*)', admin.site.root),
+    (r'^admin/', include(admin.site.urls)),
     url(r'^blog/tags/(?P<tag>[^/]+)/$',
         tagged_object_list,
         dict(queryset_or_model=published_posts(), paginate_by=10, allow_empty=True, template_name='blog/tag_detail.html'),
